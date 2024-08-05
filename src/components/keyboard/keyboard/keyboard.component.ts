@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { KeyComponent } from '../key/key.component';
 import { ToneService } from '../../../app/services/tone.service';
 
+import * as Tone from "tone";
+
 @Component({
   selector: 'app-keyboard',
   standalone: true,
@@ -11,13 +13,10 @@ import { ToneService } from '../../../app/services/tone.service';
   providers: [ToneService]
 })
 export class KeyboardComponent {
+  synth: any;
   constructor(private toneService: ToneService) {
-
   }
 
-  initSynth() {
-    this.toneService.setUpTone();
-  }
   
   playTone(note: string) {
     this.toneService.playTone(note);

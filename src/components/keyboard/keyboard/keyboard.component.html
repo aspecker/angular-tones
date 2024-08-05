@@ -1,4 +1,7 @@
 <div>
-  <button (click)="initSynth()">Init synth</button>
-  <app-key (toneStart)="playTone($event)" (toneStop)="stopTone()"></app-key>
+  <app-key [note]="'C4'" (toneStart)="playTone($event)" (toneStop)="stopTone()"></app-key>
+  <app-key [note]="'G4'" (toneStart)="playTone($event)" (toneStop)="stopTone()"></app-key>
+  <app-key [note]="'E4'" (toneStart)="playTone($event)" (toneStop)="stopTone()"></app-key>
+  <app-key [note]="'B4'" (toneStart)="playTone($event)" (toneStop)="stopTone()"></app-key>
+
 </div>

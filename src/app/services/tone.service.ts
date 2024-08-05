@@ -17,10 +17,14 @@ export class ToneService {
   }
 
   playTone(note: string) {
+    if (this.synth === undefined) {
+        this.setUpTone();
+    }
     this.synth.triggerAttack(note);
   }
 
   stopTone() {
+    
     this.synth.triggerRelease();
   }
 }

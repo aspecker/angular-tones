@@ -8,7 +8,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrl: './key.component.scss',
 })
 export class KeyComponent {
-  @Input() synth: any;
+  @Input() note: string = "";
   @Output() toneStart: EventEmitter<string> = new EventEmitter<string>();
   @Output() toneStop: EventEmitter<null> = new EventEmitter<null>();
 
@@ -16,8 +16,8 @@ export class KeyComponent {
 
   }
 
-  playTone(note: string) {
-    this.toneStart.emit(note);
+  playTone() {
+    this.toneStart.emit(this.note);
   }
 
   stopTone() {
