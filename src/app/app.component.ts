@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.toneService.setUpTone();
+    console.log(this.toneService.ToneInstance)
 
   }
 }

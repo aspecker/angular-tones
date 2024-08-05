@@ -1,3 +1,4 @@
 <div>
-  <app-key></app-key>
+  <button (click)="initSynth()">Init synth</button>
+  <app-key (toneStart)="playTone($event)" (toneStop)="stopTone()"></app-key>
 </div>

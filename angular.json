@@ -34,7 +34,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": ["node_modules/tone/Tone/index.ts"],
+            "scripts": [
+              "node_modules/tone/Tone/index.ts"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {

@@ -11,13 +11,19 @@ import { ToneService } from '../../../app/services/tone.service';
   providers: [ToneService]
 })
 export class KeyboardComponent {
-  constructor(private toneService: ToneService) {}
-  
-  playTone(note: string) {
-    this.toneService.synth.triggerAttack(note)
+  constructor(private toneService: ToneService) {
+
   }
 
-  stopTone(note: string) {
-    this.toneService.synth.triggerRelease()
+  initSynth() {
+    this.toneService.setUpTone();
+  }
+  
+  playTone(note: string) {
+    this.toneService.playTone(note);
+  }
+
+  stopTone() {
+    this.toneService.stopTone()
   }
 }

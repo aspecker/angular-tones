@@ -9,18 +9,18 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class KeyComponent {
   @Input() synth: any;
-  @Output() emitToneStart: EventEmitter<string> = new EventEmitter<string>();
-  @Output() emitToneStop: EventEmitter<null> = new EventEmitter<null>();
+  @Output() toneStart: EventEmitter<string> = new EventEmitter<string>();
+  @Output() toneStop: EventEmitter<null> = new EventEmitter<null>();
 
   constructor() {
 
   }
 
   playTone(note: string) {
-    this.emitToneStart.emit(note);
+    this.toneStart.emit(note);
   }
 
   stopTone() {
-    this.emitToneStop.emit();
+    this.toneStop.emit();
   }
 }

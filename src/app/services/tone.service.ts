@@ -13,6 +13,14 @@ export class ToneService {
 
   setUpTone() {
     this.ToneInstance = Tone;
-    this.synth = new this.ToneInstance.Synth().toDestination();
+    this.synth = new Tone.Synth().toDestination();
+  }
+
+  playTone(note: string) {
+    this.synth.triggerAttack(note);
+  }
+
+  stopTone() {
+    this.synth.triggerRelease();
   }
 }
